@@ -24,27 +24,65 @@ If the shebang line is removed, the script may still run in some shells, but it 
 ---
 
 # Task 2: Variables
-<img width="1216" height="387" alt="Screenshot From 2026-03-06 18-23-13" src="https://github.com/user-attachments/assets/a525eac6-744b-4a1c-b42e-37849e1260a2" />
+!/bin/bash
 
+NAME='Rahul Thakkar'
+ROLE='Devops Engineer'
+
+echo "Hello I am $NAME and I am a $ROLE"
 ---
 
 ## Task 3: User Input with read
-<img width="1214" height="409" alt="Screenshot From 2026-03-06 18-28-20" src="https://github.com/user-attachments/assets/731efef1-b6d8-467e-9aa7-6319187acef7" />
+#!/bin/bash
+
+read -p "Enter your name: " name
+read -p "Enter your favourite tool: " tool
+
+echo "Hello $name, your favourite tool is $tool"
 
 ---
 
 ## Task 4: If-Else Conditions
-<img width="1224" height="642" alt="Screenshot From 2026-03-06 18-45-01" src="https://github.com/user-attachments/assets/62a31862-dc88-42c2-85dc-315b5dd504d4" />
+#!/bin/bash
 
-<img width="1224" height="642" alt="Screenshot From 2026-03-06 18-58-47" src="https://github.com/user-attachments/assets/2e4049a0-ad32-46b1-a765-5c0c7732fd99" />
+read -p "Enter your number: " number
+
+if [ "$number" -gt 0 ]; then
+	echo "$number is positive"
+elif [ "$number" -lt 0  ]; then
+	echo "$number is negative"
+else
+	echo "$number is zero"
+	
+fi
+
+2
+#!/bin/bash
+
+read -p "Enter file name: " file
+
+if [ -f "$file" ]; then
+	echo "File exits"
+else
+	echo "File not exits"
+fi
 
 ---
 
 ## Task 5: Combine Everything
+#!/bin/bash
 
-<img width="1224" height="765" alt="Screenshot From 2026-03-06 19-32-18" src="https://github.com/user-attachments/assets/5b8e8acc-43f8-4d7d-a02f-621eecbea740" />
+read -p "Enter service name: " service
+read -p "Do you want to check the status?(y/n): " user_side
 
-<img width="1224" height="765" alt="Screenshot From 2026-03-06 21-21-19" src="https://github.com/user-attachments/assets/942ca88a-e1fe-4f14-81ba-e0b1130768c4" />
+if [ "$user_side" = "y" ]; then
+	echo "checking the service"
+	if systemctl status $service ; then
+		echo "$service is active"
+	fi
+elif [ "$user_side" = "n" ]; then
+	echo "skipped"
+fi
 
 ---
 
