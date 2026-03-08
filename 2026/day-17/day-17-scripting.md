@@ -11,17 +11,18 @@ Today I improved my shell scripting skills by learning **loops, command-line arg
 #!/bin/bash
 
 for fruits in Apple Watermelon Kiwi Orange Mango
+
 do
 	echo "$fruits"
+	
 done
 
 ## Script:2 count.sh
-
 #!/bin/bash
 
-for fruits in Apple Watermelon Kiwi Orange Mango
+for count in {1..10}
 do
-	echo "$fruits"
+	echo "$count"
 done
 
 # Task 2 While Loop
