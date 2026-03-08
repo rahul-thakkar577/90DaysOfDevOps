@@ -15,7 +15,6 @@ do
 	echo "$fruits"
 done
 
----
 ## Script:2 count.sh
 
 #!/bin/bash
