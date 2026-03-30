@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Thakkar | DevOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f2027;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+overflow:hidden;
+}
+
+.blob{
+position:absolute;
+width:400px;
+height:400px;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+border-radius:50%;
+filter:blur(120px);
+animation:move 20s infinite alternate;
+}
+
+.blob:nth-child(2){
+background:linear-gradient(45deg,#ff6ec4,#7873f5);
+left:60%;
+top:40%;
+animation-duration:25s;
+}
+
+.blob:nth-child(3){
+left:20%;
+top:60%;
+animation-duration:30s;
+}
+
+@keyframes move{
+0%{transform:translate(0,0)}
+100%{transform:translate(200px,-150px)}
+}
+
+/* Glass */
+.glass{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.15);
+box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Navbar */
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+padding:12px 30px;
+z-index:1000;
+transition:0.3s;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+bottom:-5px;
+left:0;
+background:white;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* Hero */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-card{
+padding:50px;
+max-width:700px;
+animation:fadeUp 1s ease;
+}
+
+.hero h1{
+font-size:3rem;
+background:linear-gradient(to right,#00c6ff,#0072ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.typing{
+margin-top:10px;
+font-size:1.2rem;
+border-right:2px solid white;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 4s steps(40,end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing{
+to{width:100%}
+}
+
+@keyframes blink{
+50%{border-color:transparent}
+}
+
+/* Buttons */
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+border-radius:30px;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px rgba(0,198,255,0.7);
+}
+
+/* Sections */
+section{
+padding:80px 20px;
+display:flex;
+justify-content:center;
+}
+
+.container{
+max-width:1000px;
+width:100%;
+padding:40px;
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.container.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Skills */
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.skill{
+padding:10px 20px;
+border-radius:20px;
+background:rgba(255,255,255,0.1);
+transition:0.3s;
+}
+
+.skill:hover{
+transform:translateY(-5px) scale(1.1);
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+}
+
+/* Projects */
+.project{
+margin-top:15px;
+padding:20px;
+border-radius:15px;
+background:rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-8px) scale(1.02);
+background:rgba(255,255,255,0.15);
+}
+
+/* Footer */
+footer{
+text-align:center;
+padding:20px;
+opacity:0.7;
+}
+
+/* Animations */
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(30px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+<div class="blob"></div>
+<div class="blob"></div>
+<div class="blob"></div>
+</div>
+
+<nav class="glass">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-card glass">
+<h1>Rahul Thakkar</h1>
+<div class="typing">Aspiring DevOps Engineer | Cloud & Automation Enthusiast</div>
+<a href="#contact" class="btn">Contact Me</a>
+</div>
+</section>
+
+<section id="about">
+<div class="container glass reveal">
+<h2>About Me</h2>
+<p>I am passionate about DevOps, automation, and cloud technologies. Currently building strong foundations in Linux, CI/CD, and scalable systems.</p>
+</div>
+</section>
+
+<section id="skills">
+<div class="container glass reveal">
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill">Linux</div>
+<div class="skill">Git</div>
+<div class="skill">Shell Scripting</div>
+<div class="skill">Docker</div>
+<div class="skill">CI/CD</div>
+<div class="skill">AWS</div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container glass reveal">
+<h2>Projects</h2>
+<div class="project">DevOps 90-Day Challenge</div>
+<div class="project">Linux Labs</div>
+<div class="project">Docker Setup Project</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container glass reveal">
+<h2>Contact</h2>
+<p>Email: rahul@example.com</p>
+<p>GitHub: github.com/yourusername</p>
+<p>LinkedIn: linkedin.com/in/yourprofile</p>
+</div>
+</section>
+
+<footer>
+© 2026 Rahul Thakkar
+</footer>
+
+<script>
+
+/* Scroll Reveal */
+const reveals = document.querySelectorAll(".container");
+
+window.addEventListener("scroll", () => {
+for(let i=0;i<reveals.length;i++){
+let windowHeight = window.innerHeight;
+let elementTop = reveals[i].getBoundingClientRect().top;
+let elementVisible = 100;
+
+if(elementTop < windowHeight - elementVisible){
+reveals[i].classList.add("show");
+}
+}
+});
+
+</script>
+
+</body>
+</html>
