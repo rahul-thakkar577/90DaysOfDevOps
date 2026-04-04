@@ -1,0 +1,38 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: my_db
+    environment:
+      MYSQL_DATABASE: library_db
+      MYSQL_ROOT_PASSWORD: rahul
+    ports:
+      - 3306:3306
+    networks:
+      - lms-app-nw
+    volumes:
+      - lms-data:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./:/var/www/html 
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prahul"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  lms-app:
+    build: .
+    container_name: lms-app
+    ports:
+      - "8009:80"
+    depends_on:
+      - db
+    networks:
+     - lms-app-nw
+    restart: always
+
+volumes:
+  lms-data:
+
+networks:
+  lms-app-nw:

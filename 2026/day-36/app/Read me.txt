@@ -1,0 +1,15 @@
+admin 
+login id pass
+
+Id = admin@admin.com
+
+Pass = admin123
+
+
+
+made by 
+
+Cool Buddy
+
+education purpose only
+
